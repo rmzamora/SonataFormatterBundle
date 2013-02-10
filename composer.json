@@ -1,8 +1,8 @@
 {
-    "name": "rmzamora/formatter-bundle",
+    "name": "sonata-project/formatter-bundle",
     "type": "symfony-bundle",
     "description": "Symfony SonataFormatterBundle",
-    "keywords": ["sonata", "formatter", "markdown", "rmzamora forked"],
+    "keywords": ["sonata", "formatter", "markdown", "ckeditor", "markitup"],
     "homepage": "http://sonata-project.org/bundles/formatter",
     "license": "MIT",
     "authors": [
@@ -12,20 +12,17 @@
             "homepage": "http://sonata-project.org"
         },
         {
-            "name": "mell zamora",
-            "email": "me@rmzamora.com",
-            "homepage": "http://rmzamora.com"
-        },         
-        {
             "name": "Sonata Community",
             "homepage": "https://github.com/sonata-project/SonataFormatterBundle/contributors"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "symfony/symfony": "2.1.*",
+        "symfony/symfony": ">=2.1,<2.3-dev",
         "twig/twig": "*",
-        "knplabs/knp-markdown-bundle": "dev-master"
+        "knplabs/knp-markdown-bundle": "1.1.*",
+        "sonata-project/markitup-bundle": "dev-master",
+        "egeloen/ckeditor-bundle": "2.*@stable"
     },
     "autoload": {
         "psr-0": { "Sonata\\FormatterBundle": "" }

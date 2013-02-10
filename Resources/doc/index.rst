@@ -12,3 +12,5 @@ Reference Guide
 
    reference/installation
    reference/usage
+   reference/formatter_widget
+   reference/formatter_block
