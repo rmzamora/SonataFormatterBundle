@@ -17,11 +17,12 @@
         }
     ],
     "require": {
-        "symfony/symfony": ">=2.1,<2.3-dev",
+        "symfony/symfony": ">=2.1,<2.4-dev",
         "twig/twig": "*",
         "knplabs/knp-markdown-bundle": "1.1.*",
         "sonata-project/markitup-bundle": "2.1.*",
-        "egeloen/ckeditor-bundle": "2.*"
+        "egeloen/ckeditor-bundle": "2.*",
+        "sonata-project/block-bundle": ">=2.2.1"
     },
     "autoload": {
         "psr-0": { "Sonata\\FormatterBundle": "" }
