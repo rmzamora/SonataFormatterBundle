@@ -1,11 +1,16 @@
 {
-    "name": "sonata-project/formatter-bundle",
+    "name": "rmzamora/formatter-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony SonataFormatterBundle",
-    "keywords": ["sonata", "formatter", "markdown", "ckeditor", "markitup"],
+    "description": "Symfony SonataFormatterBundle rmzamora forked",
+    "keywords": ["sonata", "formatter", "markdown", "ckeditor", "markitup", "rmzamora forked"],
     "homepage": "http://sonata-project.org/bundles/formatter",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Mell M. Zamora",
+            "email": "me@mellzamora.com",
+            "homepage": "http://mellzamora.com"
+        },
         {
             "name": "Thomas Rabaix",
             "email": "thomas.rabaix@sonata-project.org",
