@@ -27,7 +27,8 @@
         "knplabs/knp-markdown-bundle": "1.2.*@dev",
         "sonata-project/markitup-bundle": "2.1.*",
         "egeloen/ckeditor-bundle": "2.*",
-        "rmzamora/block-bundle": "~2.3"
+        "rmzamora/block-bundle": "~2.3",
+        "sonata-project/core-bundle": "~2.2"
     },
     "autoload": {
         "psr-0": { "Sonata\\FormatterBundle": "" }
