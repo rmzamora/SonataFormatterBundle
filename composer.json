@@ -25,7 +25,7 @@
         "symfony/symfony": "~2.3",
         "twig/twig": "*",
         "knplabs/knp-markdown-bundle": "1.2.*@dev",
-        "sonata-project/markitup-bundle": "2.1.*",
+        "sonata-project/markitup-bundle": "~2.1",
         "egeloen/ckeditor-bundle": "2.*",
         "rmzamora/block-bundle": "~2.3",
         "sonata-project/core-bundle": "~2.2"
