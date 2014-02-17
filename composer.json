@@ -24,7 +24,7 @@
     "require": {
         "symfony/symfony": "~2.4",
         "twig/twig": "*",
-        "knplabs/knp-markdown-bundle": "~1.2",
+        "knplabs/knp-markdown-bundle": "~1.2.0",
         "sonata-project/markitup-bundle": "~2.1",
         "egeloen/ckeditor-bundle": "2.*",
         "rmzamora/block-bundle": "~2.3",
