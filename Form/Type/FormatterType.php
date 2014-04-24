@@ -92,7 +92,7 @@ class FormatterType extends AbstractType
                 $options['target_field']
             );
 
-            $options['event_dispatcher']->addListener(FormEvents::POST_SUBMIT, array($listener, 'postSubmit'));
+            $options['event_dispatcher']->addListener(FormEvents::SUBMIT, array($listener, 'postSubmit'));
         }
     }
 
@@ -152,6 +152,7 @@ class FormatterType extends AbstractType
                  '-', 'Image', 'Link', 'Unlink', 'Table'),
                  array('Maximize', 'Source')
             ),
+            'ckeditor_basepath'         => 'bundles/sonataformatter/vendor/ckeditor',
             'ckeditor_context'          => null,
             'format_field_options'      => array(
                 'choices'               => function (Options $options) use ($pool, $translator) {
