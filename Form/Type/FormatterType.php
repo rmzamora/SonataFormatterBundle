@@ -72,8 +72,25 @@ class FormatterType extends AbstractType
             $options['source_field_options']['property_path'] = $sourceField;
         }
 
+        $builder->add($formatField, 'choice', $options['format_field_options']);
+
+        // If there's only one possible format, do not display the choices
+        $formatChoices = $builder->get($formatField)->getOption('choices');
+
+        if (count($formatChoices) === 1) {
+            // Retrieve format value
+            reset($formatChoices); // Ensure we're at the start
+            $options['format_field_options']['data'] = key($formatChoices);
+
+            // Remove the choice field
+            unset($options['format_field_options']['choices']);
+            $builder->remove($formatField);
+
+            // Replace it with an hidden field
+            $builder->add($formatField, 'hidden', $options['format_field_options']);
+        }
+
         $builder
-            ->add($formatField, 'choice', $options['format_field_options'])
             ->add($sourceField, 'textarea', $options['source_field_options']);
 
         /**
@@ -115,6 +132,7 @@ class FormatterType extends AbstractType
         } else {
             $view->vars['format_field'] = $options['format_field'];
         }
+        $view->vars['format_field_options'] = $options['format_field_options'];
 
         $ckeditorConfiguration = array(
             'toolbar'       => array_values($options['ckeditor_toolbar_icons']),
