@@ -13,6 +13,7 @@ namespace Sonata\FormatterBundle\Controller;
 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 use Sonata\MediaBundle\Controller\MediaAdminController as BaseMediaAdminController;
@@ -22,11 +23,10 @@ class CkeditorAdminController extends BaseMediaAdminController
     /**
      * Returns the response object associated with the browser action
      *
+     * @param Request $request
      * @return Response
-     *
-     * @throws AccessDeniedException
      */
-    public function browserAction()
+    public function browserAction(Request $request = null)
     {
         $this->checkIfMediaBundleIsLoaded();
 
@@ -36,7 +36,7 @@ class CkeditorAdminController extends BaseMediaAdminController
 
         $datagrid = $this->admin->getDatagrid();
 
-        $filters = $this->getRequest()->get('filter');
+        $filters = $request->get('filter');
 
         // set the default context
         if (!$filters) {
@@ -82,11 +82,10 @@ class CkeditorAdminController extends BaseMediaAdminController
     /**
      * Returns the response object associated with the upload action
      *
+     * @param Request $request
      * @return Response
-     *
-     * @throws NotFoundHttpException
      */
-    public function uploadAction()
+    public function uploadAction(Request $request = null)
     {
         $this->checkIfMediaBundleIsLoaded();
 
@@ -96,7 +95,6 @@ class CkeditorAdminController extends BaseMediaAdminController
 
         $mediaManager = $this->get('sonata.media.manager.media');
 
-        $request = $this->getRequest();
         $provider = $request->get('provider');
         $file = $request->files->get('upload');
 
