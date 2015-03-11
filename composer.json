@@ -27,7 +27,7 @@
         "twig/twig": "*",
         "knplabs/knp-markdown-bundle": "~1.3",
         "egeloen/ckeditor-bundle": "~2.2",
-        "rmzamora/block-bundle": "~2.3",
+        "rmzamora/block-bundle": "2.3.*",
         "sonata-project/core-bundle": "~2.2"
     },
     "require-dev": {
