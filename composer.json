@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Symfony SonataFormatterBundle rmzamora forked",
     "keywords": ["sonata", "formatter", "markdown", "ckeditor", "markitup", "rmzamora forked"],
-    "homepage": "http://sonata-project.org/bundles/formatter",
+    "homepage": "https://sonata-project.org/bundles/formatter",
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,7 @@
         {
             "name": "Thomas Rabaix",
             "email": "thomas.rabaix@sonata-project.org",
-            "homepage": "http://sonata-project.org"
+            "homepage": "https://sonata-project.org"
         },
         {
             "name": "Sonata Community",
