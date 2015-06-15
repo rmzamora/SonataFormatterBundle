@@ -11,20 +11,19 @@
 
 namespace Sonata\FormatterBundle\Controller;
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sonata\MediaBundle\Controller\MediaAdminController as BaseMediaAdminController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-use Sonata\MediaBundle\Controller\MediaAdminController as BaseMediaAdminController;
-
 class CkeditorAdminController extends BaseMediaAdminController
 {
     /**
-     * Returns the response object associated with the browser action
+     * Returns the response object associated with the browser action.
      *
-     * @param Request $request
      * @return Response
+     *
+     * @throws AccessDeniedException
      */
     public function browserAction(Request $request = null)
     {
@@ -36,7 +35,7 @@ class CkeditorAdminController extends BaseMediaAdminController
 
         $datagrid = $this->admin->getDatagrid();
 
-        $filters = $request->get('filter');
+        $filters = $this->getRequest()->get('filter');
 
         // set the default context
         if (!$filters) {
@@ -75,17 +74,18 @@ class CkeditorAdminController extends BaseMediaAdminController
             'form'          => $formView,
             'datagrid'      => $datagrid,
             'root_category' => $category,
-            'formats'       => $formats
+            'formats'       => $formats,
         ));
     }
 
     /**
-     * Returns the response object associated with the upload action
+     * Returns the response object associated with the upload action.
      *
-     * @param Request $request
      * @return Response
+     *
+     * @throws NotFoundHttpException
      */
-    public function uploadAction(Request $request = null)
+    public function uploadAction()
     {
         $this->checkIfMediaBundleIsLoaded();
 
@@ -95,6 +95,7 @@ class CkeditorAdminController extends BaseMediaAdminController
 
         $mediaManager = $this->get('sonata.media.manager.media');
 
+        $request = $this->getRequest();
         $provider = $request->get('provider');
         $file = $request->files->get('upload');
 
@@ -112,12 +113,12 @@ class CkeditorAdminController extends BaseMediaAdminController
 
         return $this->render($this->getTemplate('upload'), array(
             'action' => 'list',
-            'object' => $media
+            'object' => $media,
         ));
     }
 
     /**
-     * Returns a template
+     * Returns a template.
      *
      * @param string $name
      *
@@ -131,11 +132,11 @@ class CkeditorAdminController extends BaseMediaAdminController
             return $templates[$name];
         }
 
-        return null;
+        return;
     }
 
     /**
-     * Checks if SonataMediaBundle is loaded otherwise throws an exception
+     * Checks if SonataMediaBundle is loaded otherwise throws an exception.
      *
      * @throws \RuntimeException
      */
