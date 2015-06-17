@@ -33,7 +33,6 @@
     },
     "require-dev": {
         "symfony/validator": "~2.3",
-        "symfony/validator": "~2.3"
         "fabpot/php-cs-fixer": "~0.5|~1.0"
     },
     "autoload": {
