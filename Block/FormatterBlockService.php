@@ -18,7 +18,7 @@ use Sonata\BlockBundle\Model\BlockInterface;
 use Sonata\CoreBundle\Validator\ErrorElement;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author     Thomas Rabaix <thomas.rabaix@sonata-project.org>
@@ -72,9 +72,11 @@ class FormatterBlockService extends BaseBlockService
     }
 
     /**
-     * {@inheritdoc}
+     * Define the default options for the block.
+     *
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultSettings(OptionsResolverInterface $resolver)
+    public function configureSettings(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'format'     => 'richhtml',
