@@ -155,7 +155,7 @@ class FormatterType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureSettings(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $pool = $this->pool;
         $translator = $this->translator;
@@ -197,6 +197,7 @@ class FormatterType extends AbstractType
             'target_field',
         ));
     }
+
 
     /**
      * {@inheritdoc}
