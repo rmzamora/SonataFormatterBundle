@@ -37,16 +37,48 @@
                 var appendClass = val;
                 switch(val) {
                     case 'textile':
-                        elms.markItUp(markitup_sonataTextileSettings);
+                        {{ source_id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            resize_enabled: true,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
                         break;
                     case 'markdown':
-                        elms.markItUp(markitup_sonataMarkdownSettings);
+                        {{ source_id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            resize_enabled: true,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
                         break;
                     case 'bbcode':
-                        elms.markItUp(markitup_sonataBBCodeSettings);
+                        {{ source_id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            resize_enabled: true,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
                         break;
                     case 'rawhtml':
-                        elms.markItUp(markitup_sonataHtmlSettings);
+                        {{ source_id }}_rich_instance = CKEDITOR.replace('{{ form.children[source_field].vars.id }}', {
+                            autoGrow_onStartup: true,
+                            autoGrow_maxHeight: 700,
+                            autoGrow_minHeight: 300,
+                            autoGrow_bottomSpace: 200,
+                            resize_enabled: true,
+                            startupMode : 'source',
+                            toolbar: [['Maximize']]
+                        });
                         appendClass = 'html';
                         break;
                     case 'richhtml':
