@@ -16,7 +16,7 @@
         jQuery(document).ready(function() {
 
             // This code requires CKEDITOR and jQuery MarkItUp
-            if (typeof CKEDITOR === 'undefined' || jQuery().markItUp == undefined) {
+            if (typeof CKEDITOR === 'undefined') {
                 return;
             }
 
@@ -28,7 +28,6 @@
 
             jQuery('#{{ form.children[format_field].vars.id }}').change(function(event) {
                 var elms = jQuery('#{{ form.children[source_field].vars.id }}');
-                elms.markItUpRemove();
                 if ({{ source_id }}_rich_instance) {
                     {{ source_id }}_rich_instance.destroy();
                 }
@@ -79,22 +78,12 @@
                             startupMode : 'source',
                             toolbar: [['Maximize']]
                         });
-                        appendClass = 'html';
                         break;
                     case 'richhtml':
                         {{ source_id }}_rich_instance = {{ ckeditor_widget(form.children[source_field].vars.id, ckeditor_configuration) }};
 
                 }
 
-                var parent = elms.parents('div.markItUp');
-
-                if (parent) {
-                    for (name in ['textile', 'markdown', 'bbcode', 'rawhtml', 'richhtml', 'rawhtml']) {
-                        parent.removeClass(name)
-                    }
-
-                    parent.addClass(appendClass);
-                }
             });
 
             jQuery('#{{ form.children[format_field].vars.id }}').trigger('change');
@@ -114,27 +103,52 @@
             if (typeof CKEDITOR === 'undefined' || jQuery().markItUp == undefined) {
                 return;
             }
-
-            var elms = jQuery('#{{ form.vars.id }}');
+	        
+	        var ckeditor_instance = null;
 
             {% if format == 'textile' %}
-                elms.markItUp(markitup_sonataTextileSettings);
+	            ckeditor_instance = CKEDITOR.replace('{{ form.vars.id }}', {
+                    autoGrow_onStartup: true,
+                    autoGrow_maxHeight: 700,
+                    autoGrow_minHeight: 300,
+                    autoGrow_bottomSpace: 200,
+                    resize_enabled: true,
+                    startupMode : 'source',
+                    toolbar: [['Maximize']]
+                });
             {% elseif format == 'markdown' %}
-                elms.markItUp(markitup_sonataMarkdownSettings);
+	            ckeditor_instance = CKEDITOR.replace('{{ form.vars.id }}', {
+                    autoGrow_onStartup: true,
+                    autoGrow_maxHeight: 700,
+                    autoGrow_minHeight: 300,
+                    autoGrow_bottomSpace: 200,
+                    resize_enabled: true,
+                    startupMode : 'source',
+                    toolbar: [['Maximize']]
+                });
             {% elseif format == 'bbcode' %}
-                elms.markItUp(markitup_sonataBBCodeSettings);
+	            ckeditor_instance = CKEDITOR.replace('{{ form.vars.id }}', {
+                    autoGrow_onStartup: true,
+                    autoGrow_maxHeight: 700,
+                    autoGrow_minHeight: 300,
+                    autoGrow_bottomSpace: 200,
+                    resize_enabled: true,
+                    startupMode : 'source',
+                    toolbar: [['Maximize']]
+                });
             {% elseif format == 'rawhtml' %}
-                elms.markItUp(markitup_sonataHtmlSettings);
+	            ckeditor_instance = CKEDITOR.replace('{{ form.vars.id }}', {
+                    autoGrow_onStartup: true,
+                    autoGrow_maxHeight: 700,
+                    autoGrow_minHeight: 300,
+                    autoGrow_bottomSpace: 200,
+                    resize_enabled: true,
+                    startupMode : 'source',
+                    toolbar: [['Maximize']]
+                });
             {% elseif format == 'richhtml' %}
-                {{ ckeditor_widget(form.vars.id, ckeditor_configuration) }};
+	            {{ ckeditor_widget(form.vars.id, ckeditor_configuration) }}
             {% endif %}
-
-            var parent = elms.parents('div.markItUp');
-
-            if (parent) {
-                parent.addClass('{{ format }}');
-            }
-
         });
     </script>
 {% endblock sonata_simple_formatter_type_widget %}
