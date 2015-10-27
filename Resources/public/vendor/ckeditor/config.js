@@ -35,4 +35,12 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Make dialogs simpler.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+	config.skin = 'bootstrapck';
+
+	config.width = "auto";
+	config.height = "auto";
+
+	config.title = false;
+
 };
