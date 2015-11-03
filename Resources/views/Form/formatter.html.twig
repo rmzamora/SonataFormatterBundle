@@ -68,7 +68,7 @@
                         });
                         break;
                     case 'richhtml':
-                        {{ source_id }}_rich_instance = {{ ckeditor_widget(form.children[source_field].vars.id, ckeditor_configuration) }};
+                        {{ source_id }}_rich_instance = {{ ckeditor_replace(form.children[source_field].vars.id, ckeditor_configuration) }};
 
                 }
 
@@ -91,7 +91,7 @@
             if (typeof CKEDITOR === 'undefined' || jQuery().markItUp == undefined) {
                 return;
             }
-	        
+
 	        var ckeditor_instance = null;
 
             {% if format == 'textile' %}
@@ -123,7 +123,7 @@
                     toolbar: [['Maximize']]
                 });
             {% elseif format == 'richhtml' %}
-	            {{ ckeditor_widget(form.vars.id, ckeditor_configuration) }}
+	            {{ ckeditor_replace(form.vars.id, ckeditor_configuration) }}
             {% endif %}
         });
     </script>
