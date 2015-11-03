@@ -25,9 +25,9 @@
         "symfony/framework-bundle": "~2.3",
         "symfony/form": "~2.3",
         "symfony/property-access": "~2.3",
-        "twig/twig": "*",
-        "knplabs/knp-markdown-bundle": "~1.3",
-        "egeloen/ckeditor-bundle": "~3.0",
+        "twig/twig": "~1.12",
+        "knplabs/knp-markdown-bundle": "~1.3.2",
+        "egeloen/ckeditor-bundle": "~2.2",
         "rmzamora/block-bundle": "2.5.0.*",
         "rmzamora/core-bundle": "2.5.0.*"
     },

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata project.
+ * This file is part of the Sonata Project package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -18,7 +18,15 @@ use Sonata\FormatterBundle\Formatter\Pool;
  */
 class TextFormatterExtension extends \Twig_Extension
 {
+    /**
+     * @var Pool
+     */
     protected $pool;
+
+    /**
+     * @var \Twig_Environment
+     */
+    protected $environment;
 
     public function __construct(Pool $pool)
     {
