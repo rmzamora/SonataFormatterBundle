@@ -27,7 +27,7 @@
         "symfony/property-access": "~2.3|~3.0",
         "twig/twig": "~1.12",
         "knplabs/knp-markdown-bundle": "~1.4",
-        "egeloen/ckeditor-bundle": "~2.2",
+        "egeloen/ckeditor-bundle": "^2.2|^3.0",
         "rmzamora/block-bundle": "2.5.0.*",
         "rmzamora/core-bundle": "2.5.0.*"
     },
