@@ -18,21 +18,17 @@ use Sonata\FormatterBundle\Formatter\Pool;
  */
 class TextFormatterExtension extends \Twig_Extension implements \Twig_Extension_InitRuntimeInterface
 {
-    /**
-     * @var Pool
-     */
     protected $pool;
 
-    /**
-     * @param Pool $pool
-     */
     public function __construct(Pool $pool)
     {
         $this->pool = $pool;
     }
 
     /**
-     * {@inheritdoc}
+     * Returns the token parser instance to add to the existing list.
+     *
+     * @return array An array of Twig_TokenParser instances
      */
     public function getTokenParsers()
     {
@@ -41,7 +37,7 @@ class TextFormatterExtension extends \Twig_Extension implements \Twig_Extension_
     }
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
     public function getFilters()
     {
