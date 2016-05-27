@@ -2,26 +2,11 @@
     double: Widget; Usage
     double: Widget; Configuration
 
+Formatter Widget
+================
 
 One recurrent need is to provide some kind of rich user interface to edit content.
-However, depending on the final target the content can have different formats: ``markdown``, ``textile``, ``bbcode``, ``rawhtml``, ``richhtml``.
-
-Simple Formatter Wiget
-======================
-
-The ``sonata_simple_formatter_type_selector`` widget has been implemented to allow developers to force the input formatter value.
-
-
-.. code-block:: php
-
-    <?php
-
-    $formMapper->add('comment', 'sonata_simple_formatter_type', array(
-        'format' => 'markdown'
-    ));
-
-Advanced Formatter Widget
-=========================
+However, depending on the final target the content can have different formats: ``markdown``, ``raw content`` or ``html``.
 
 The ``sonata_formatter_type_selector`` widget has been implemented to allow end users to select the correct format for his/her need.
 And depending on the format, the textarea will change to match its requirements.
@@ -93,7 +78,7 @@ Additionally, the following options can be added to give `CKEditor` a context in
 * ``ckeditor_context``: give CKEditor a context in order to customize routes used to browse and upload medias (see "Use CKEditor to select medias in SonataMediaBundle" chapter)
 * ``ckeditor_toolbar_icons`` : give CKEditor a custom toolbar configuration (optional)
 
-Here is the default `CKEditor` custom toolbar configuration, you can tweak:
+Here is the default `CKEditor` custom tooolbar configuration, you can tweak:
 
 .. code-block:: php
 
@@ -124,8 +109,8 @@ Open the ``config.yml`` file and add the following lines (or adjust the current 
 .. code-block:: yaml
 
     twig:
-        debug:            "%kernel.debug%"
-        strict_variables: "%kernel.debug%"
+        debug:            '%kernel.debug%'
+        strict_variables: '%kernel.debug%'
 
         form:
             resources:
