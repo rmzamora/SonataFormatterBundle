@@ -72,7 +72,7 @@
                         });
                         break;
                     case 'richhtml':
-                        {{ source_id }}_rich_instance = {{ ckeditor_replace(form.children[source_field].vars.id, ckeditor_configuration) }};
+                        {{ source_id }}_rich_instance = {{ ckeditor_replace(form.children[source_field].vars.id, ckeditor_configuration|raw) }};
 
                 }
 
